@@ -4,6 +4,8 @@ FROM maven:3.9.5-eclipse-temurin-21 as build
 
 WORKDIR /graphhopper
 
+COPY graphhopper .
+
 # Build application
 RUN mvn clean install -DskipTests
 
