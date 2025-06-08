@@ -1,5 +1,5 @@
 # Build stage
-ARG GH_VERSION=7.0
+ARG GH_VERSION=8.0
 FROM maven:3.9.5-eclipse-temurin-21 as build
 
 WORKDIR /graphhopper
@@ -27,7 +27,7 @@ COPY --from=build /graphhopper/web/target/graphhopper-web-${GH_VERSION}.jar ./ap
 COPY graphhopper.sh build.sh /app/
 
 # Permissions
-RUN chmod +x /app/graphhopper.sh
+RUN chmod +x /app/graphhopper.sh /app/build.sh
 
 # Networking
 EXPOSE 8989 8990
