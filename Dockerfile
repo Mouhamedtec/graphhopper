@@ -26,9 +26,6 @@ WORKDIR /app
 COPY --from=build /graphhopper/web/target/graphhopper-web-${GH_VERSION}.jar ./app.jar
 COPY graphhopper.sh build.sh /app/
 
-# Permissions
-RUN chmod +x /app/graphhopper.sh /app/build.sh
-
 # Networking
 EXPOSE 8989 8990
 
