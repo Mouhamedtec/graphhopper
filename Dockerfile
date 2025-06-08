@@ -5,7 +5,7 @@ FROM maven:3.9.5-eclipse-temurin-21 as build
 WORKDIR /graphhopper
 
 # Build application
-RUN mvn clean package -DskipTests
+RUN mvn clean install -DskipTests
 
 # Runtime stage
 FROM eclipse-temurin:17-jre-jammy
