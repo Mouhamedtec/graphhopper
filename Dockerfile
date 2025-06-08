@@ -11,7 +11,6 @@ RUN mvn clean package -DskipTests
 # Runtime stage
 FROM eclipse-temurin:17-jre-jammy
 
-# Security: Create application user
 # Configuration
 ENV JAVA_OPTS="-Xmx1g -Xms1g"
 ENV CONFIG_FILE="/config/config.yml"
