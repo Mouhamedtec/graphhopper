@@ -4,7 +4,7 @@ name: Build and publish graphhopper image
 
 on:
   schedule:
-     - corn: 15 * * * *
+     - cron: 30 * * * *
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,5 +25,5 @@ jobs:
       - name: Run a one-line script
         env:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: sh ./.github/build-and-upload.sh

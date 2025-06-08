@@ -16,13 +16,13 @@ Option:
   --help        Print this message
   
 Docker Hub credentials are needed for pushing the image. If they are not provided using the
-DOCKERHUB_USER and DOCKERHUB_PASSWORD environment variables, then they will be asked interactively.
+DOCKERHUB_USER and DOCKERHUB_TOKEN environment variables, then they will be asked interactively.
 USAGE
 )
 
 if [ "$1" == "--push" ]; then
   push="true"
-  docker login --username "${DOCKERHUB_USER}" --password "${DOCKERHUB_PASSWORD}" || exit $?
+  docker login --username "${DOCKERHUB_USER}" --password "${DOCKERHUB_TOKEN}" || exit $?
   shift
 else
   push="false"
