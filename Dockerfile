@@ -27,7 +27,7 @@ WORKDIR /app
 
 # Copy artifacts
 COPY --from=build --chown=graphhopper:graphhopper /graphhopper/web/target/graphhopper-web-${GH_VERSION}.jar ./app.jar
-COPY --chown=graphhopper:graphhopper graphhopper.sh /app/
+COPY --chown=graphhopper:graphhopper graphhopper.sh build.sh /app/
 
 # Permissions
 RUN chmod +x /app/graphhopper.sh
