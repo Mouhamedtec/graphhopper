@@ -1,5 +1,4 @@
 # Build stage
-ARG GH_VERSION=8.0
 FROM maven:3.9.5-eclipse-temurin-21 as build
 
 WORKDIR /graphhopper
@@ -19,7 +18,7 @@ VOLUME /data
 WORKDIR /app
 
 # Copy artifacts
-COPY --from=build /graphhopper/web/target/graphhopper-web-${GH_VERSION}.jar ./app.jar
+COPY --from=build /graphhopper/web/target/graphhopper*.jar ./
 COPY graphhopper.sh build.sh /app/
 
 # Networking

@@ -67,10 +67,10 @@ services:
       retries: 3
 ```
 
-## 🏗️ Building Specific Versions
+## 🏗️ Build and push specific version
 To build a Docker image for a specific version of GraphHopper:
 ```bash
-./build.sh --build-arg GH_VERSION=8.0
+./build.sh --push v5.0     # Build and push specific version
 ```
 
 Check out the graphhopper.sh script for additional commands like importing data.
